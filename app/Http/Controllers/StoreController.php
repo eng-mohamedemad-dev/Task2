@@ -69,7 +69,7 @@ class StoreController extends Controller
 
     public function storeOrders(Store $store)
     {
-        $store->load('products');
+        $store->load('products', 'orders.items');
         return $this->successResponse('Products fetched successfully', OrderResource::collection($store->orders));
     }
 }
