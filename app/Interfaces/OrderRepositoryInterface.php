@@ -9,5 +9,6 @@ interface OrderRepositoryInterface
     public function deleteOrder($order);
     public function getAllOrders();
     public function updateOrder($order, array $data);
+
 }
 

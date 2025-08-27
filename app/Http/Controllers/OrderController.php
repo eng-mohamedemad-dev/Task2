@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Store;
+use App\Models\Product;
 use App\Services\OrderService;
 use App\Http\Requests\OrderRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\OrderResource;
+use App\Http\Resources\ProductResource;
 use App\Http\Requests\UpdateOrderStRequest;
 
 class OrderController extends Controller

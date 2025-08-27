@@ -4,9 +4,10 @@
 namespace App\Repositories;
 
 use App\Models\Order;
+use App\Models\Store;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use App\Interfaces\OrderRepositoryInterface;
-use App\Models\Store;
 
 class OrderRepository implements OrderRepositoryInterface
 {
@@ -83,5 +84,6 @@ class OrderRepository implements OrderRepositoryInterface
         return $order->load('items');
     });
 }
+
 
 }

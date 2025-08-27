@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 Route::get('stores/{store}/categories', [CategoryController::class, 'index']);
+Route::get('stores/{store}/orders', [StoreController::class, 'storeProducts']);
 Route::apiResource('/orders', OrderController::class);
 Route::get('stores/character/{character_id}', [StoreController::class, 'getStoreByCharacterId']);
 Route::apiResource('/stores', StoreController::class);

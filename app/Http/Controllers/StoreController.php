@@ -65,4 +65,10 @@ class StoreController extends Controller
         $store = $this->storeService->getStoreByCharacterId($character_id);
         return $this->successResponse('Store fetched successfully', StoreResource::collection($store));
     }
+
+    public function storeProducts(Store $store)
+    {
+        $store->load('products');
+        return $this->successResponse('Products fetched successfully',ProductResource::collection($store->products));
+    }
 }
