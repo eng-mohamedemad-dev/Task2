@@ -6,6 +6,7 @@ use App\Models\Store;
 use App\Services\StoreService;
 use App\Http\Requests\StoreRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\OrderResource;
 use App\Http\Resources\StoreResource;
 use App\Http\Resources\ProductResource;
 
@@ -66,9 +67,9 @@ class StoreController extends Controller
         return $this->successResponse('Store fetched successfully', StoreResource::collection($store));
     }
 
-    public function storeProducts(Store $store)
+    public function storeOrders(Store $store)
     {
         $store->load('products');
-        return $this->successResponse('Products fetched successfully',ProductResource::collection($store->products));
+        return $this->successResponse('Products fetched successfully', OrderResource::collection($store->orders));
     }
 }
